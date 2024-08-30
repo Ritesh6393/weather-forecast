@@ -3,7 +3,7 @@ const cache = require('../config/cacheConfig');
 
 const fetchWeatherData = async (city) => {
   const apiKey = process.env.OPENWEATHERMAP_API_KEY;
-  const cacheKey = `${city}-metric`; // Cache key based on city name and unit
+  const cacheKey = `${city}-metric`; 
   const cachedWeather = cache.get(cacheKey);
 
   if (cachedWeather) {
