@@ -26,11 +26,11 @@ const fetchWeatherData = async (city) => {
   const date = new Date(response.data.dt * 1000); 
   const dateTime = date.toLocaleString(); 
 
- console.log(response);
+
   const weatherData = {
     city: response.data.name,
-    temperature: `${response.data.main.temp}°C`, 
-    feels_like:`${response.data.main.feels_like}°C`,
+    temperature: `${response.data.main.temp}`, 
+    feels_like:`${response.data.main.feels_like}`,
     humidity: `${response.data.main.humidity}%`,
     windSpeed: `${response.data.wind.speed} m/s`, 
     description: response.data.weather[0].description,
@@ -38,7 +38,7 @@ const fetchWeatherData = async (city) => {
     dateTime: dateTime, 
     responseDate: responseDate 
   };
-  console.log(weatherData)
+  
 
   cache.set(cacheKey, weatherData); 
   return weatherData;
